@@ -1,0 +1,51 @@
+<html manifest="cache.manifest">
+<head>
+<title id=msgs></title>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));msgs.innerHTML="Instalando Offline Cache: " + Percent + "%"};
+function DisplayCacheProgress(){
+setTimeout(function(){msgs.innerHTML="Cache Instalado Correctamente ✔";},2000);
+setTimeout(function(){location.reload();},3000);
+}
+window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+</head>
+<style>
+    body {
+    background: #333;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("logo.png");
+}
+   .loader{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -75px 0 0 -75px;
+        border: 10px solid #1f1e1e;
+        border-radius: 50%;
+        border-top: 10px solid #044595;
+        border-left: 10px solid #044595;
+        width: 120px;
+        height: 120px;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin{
+        0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(360deg);
+        }
+    } 
+</style>
+<span id="loader" class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</span>
+</html>
