@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exploits Selection PS3, PS4 & PS5</title>
+</head>
+<style>
+	body {
+	background: #333;
+	background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("logo.png");
+}
+	.loader{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -75px 0 0 -75px;
+		border: 10px solid #1f1e1e;
+		border-radius: 50%;
+		border-top: 10px solid #044595;
+		border-left: 10px solid #044595;
+		width: 120px;
+		height: 120px;
+		animation: spin 1s linear infinite;
+	}
+	@keyframes spin{
+		0%{
+			transform: rotate(0deg);
+		}
+
+		100%{
+			transform: rotate(360deg);
+		}
+	}
+	.info {
+        overflow: hidden;
+        position: fixed;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 45px;
+        font-family: sans-serif;
+        color: #b8b8b8;
+        transform: translate(-50%, -50%);
+    }
+
+    .j {
+        font-size: 15px;
+        color: #2F3335;
+    }
+
+    .log {
+        display: block;
+        unicode-bidi: embed;
+        font-family: monospace;
+        white-space: pre;
+        font-size: 18px;
+        width: 100%;
+        height: 80%;
+    }
+    fieldset{
+    	width: 398px;
+    }
+    legend{
+    	color: white; 
+    	font-family: system ui;
+    }
+    h4 {
+    	color: white; 
+    	font-family: system ui;
+    	position: absolute; 
+    	bottom: 0; 
+    	right: 0;
+    	font-size: 20px;
+    }
+    h5 {
+    	color: white; 
+    	font-family: system ui;
+    	position: absolute; 
+    	bottom: 30px; 
+    	right: 0;
+    	font-size: 20px;
+    }
+    header {
+        padding: 10px;
+        text-align: center;
+        background: #003263;
+        color: white;
+        font-size: 20px;
+        padding: 20px 40px;
+        margin: 5px;
+        border: 1px solid #6392b1;
+    }
+    .content-title {
+  padding: 20px 40px;
+  margin: 5px;
+  background: #003263;
+  color: #fff;
+}
+h1 {
+	font-family: system-ui;
+    font-weight: 500;
+}
+h3 {
+	font-family: system-ui;
+    font-weight: 500;
+    font-size: 1.75rem;
+    color: white;
+}
+.content-header {
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    padding-left: 16px;
+}
+</style>
+<script>
+    function allset() {document.getElementById("loader").style.display = "none";}</script>
+<body on onload="setTimeout(poc, 1500);">
+	<script src="int64.js"></script>
+    <script src="rop.js"></script>
+    <script src="exploit.js"></script>
+    <script src="webkit.js"></script>
+	<div class="content-title">
+       <h1 id="title">PS5 FW 3.XX/4.XX</h1>
+    </div>
+    <div class="content-header">
+       <h3 id="header">Starting!! ⚠️If you are doing this in low versions or in another system that is not PS5, it will not load the Exploit⚠️</h3>
+    </div>
+	<div id="loader" class="loader"></div>
+	<div id="awaiting" class="info" style="display: none;">Awaiting Payload...<br><span class="j">${jndi:ldap://nsa.gov</span></div>
+	<div id="allset" class="info" style="display: none;">You're all set!</div>
+	<fieldset>
+		<legend>CONSOLE</legend><br>
+		<div>
+			<font size="3" color="#FF0000" id="console"></font><br><br>
+		</div>
+	</fieldset>
+</body>
+</html>
